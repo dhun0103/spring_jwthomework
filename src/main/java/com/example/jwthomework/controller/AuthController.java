@@ -18,16 +18,19 @@ public class AuthController {
 
     @PostMapping("/api/auth/signup")
     public ResponseEntity<MemberResponseDto> signup(@RequestBody MemberRequestDto memberRequestDto) {
+
         return ResponseEntity.ok(authService.signup(memberRequestDto));
     }
 
     @PostMapping("/api/auth/login")
     public ResponseEntity<TokenDto> login(@RequestBody MemberRequestDto memberRequestDto) {
+
         return ResponseEntity.ok(authService.login(memberRequestDto));
     }
 
     @PostMapping("/api/auth/reissue")
     public ResponseEntity<TokenDto> reissue(@RequestBody TokenRequestDto tokenRequestDto) {
+
         return ResponseEntity.ok(authService.reissue(tokenRequestDto));
     }
 }
