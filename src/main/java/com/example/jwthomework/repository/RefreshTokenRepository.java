@@ -1,5 +1,7 @@
 package com.example.jwthomework.repository;
 
+import com.example.jwthomework.entity.RefreshToken;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

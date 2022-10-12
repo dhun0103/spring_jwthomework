@@ -2,8 +2,8 @@ package com.example.jwthomework.service;
 
 import com.example.jwthomework.dto.MemberResponseDto;
 import com.example.jwthomework.repository.MemberRepository;
+import com.example.jwthomework.util.SecurityUtil;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.security.SecurityUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
