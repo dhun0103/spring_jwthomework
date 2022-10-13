@@ -1,9 +1,6 @@
 package com.example.jwthomework.controller;
 
-import com.example.jwthomework.dto.MemberRequestDto;
-import com.example.jwthomework.dto.MemberResponseDto;
-import com.example.jwthomework.dto.TokenDto;
-import com.example.jwthomework.dto.TokenRequestDto;
+import com.example.jwthomework.dto.*;
 import com.example.jwthomework.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -23,9 +20,9 @@ public class AuthController {
     }
 
     @PostMapping("/api/auth/login")
-    public ResponseEntity<TokenDto> login(@RequestBody MemberRequestDto memberRequestDto) {
+    public ResponseEntity<TokenDto> login(@RequestBody LoginRequestDto loginRequestDto) {
 
-        return ResponseEntity.ok(authService.login(memberRequestDto));
+        return ResponseEntity.ok(authService.login(loginRequestDto));
     }
 
     @PostMapping("/api/auth/reissue")

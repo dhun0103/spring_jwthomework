@@ -14,16 +14,29 @@ public class PostService {
 
     private final PostRepository postRepository;
 
-    @Transactional
-    public Post update(Long id, PostRequestDto requestDto){
 
-        Post post=postRepository.findById(id).orElseThrow(
+
+    @Transactional
+    public Post commentUpdate(Long id, PostRequestDto requestDto) {
+
+        Post post = postRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("id 존재 안함")
         );
 
         post.update(requestDto);
 
         return post;
+    }
+
+    @Transactional
+    public Post showPost(Long id) {
+
+        Post post = postRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("id 존재 안함")
+        );
+
+
+       return post;
     }
 }
 

@@ -27,9 +27,9 @@ public class PostController {
     //개별 조회
     @GetMapping("/api/posts/{id}")
     public Post getEachPosts(@PathVariable Long id){
-        Optional<Post> post = postRepository.findById(id);
 
-        return post.orElseGet(null);
+
+        return postService.showPost(id);
     }
 
     //작성
@@ -45,7 +45,7 @@ public class PostController {
     @PutMapping("/api/posts/{id}")
     public Post updatePost(@PathVariable Long id, @RequestBody PostRequestDto requestDto){
 
-        Post post = postService.update(id,requestDto);
+        Post post = postService.commentUpdate(id,requestDto);
 
         return post;
     }
